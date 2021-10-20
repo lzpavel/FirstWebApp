@@ -1,0 +1,6 @@
+<div th:fragment="header">
+    <ul class="nav">
+        <li class="nav"><a th:class="${active_tab == 1} ? 'active' : ''" href="/">Home</a></li>
+        <li class="nav"><a th:class="${active_tab == 2} ? 'active' : ''" href="/database">DataBase</a></li>
+    </ul>
+</div>

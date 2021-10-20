@@ -1,0 +1,67 @@
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li.nav {
+    float: left;
+}
+
+li.nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-bottom: 5px solid #333;
+}
+
+li.nav a.active {
+    border-bottom: 5px solid #7300e6;
+}
+
+li.nav a:hover {
+    background-color: #7300e6;
+    border-bottom: 5px solid #7300e6;
+}
+
+h1 {
+    color: red;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: blue;
+}
+
+table.dbTable {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table.dbTable td {
+    border: 1px solid black;
+}
+
+table.dbTableId {
+    width: 10%;
+}
+
+table.dbTableData {
+    width: 80%;
+}
+
+table.dbTableEdit {
+    width: 5%;
+}
+
+table.dbTableDelete {
+    width: 5%;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>First Web App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+<br />
+
+<table class="dbTable">
+    <tbody>
+        <tr th:each="el : ${fwaTableItems}">
+            <td class="dbTableId" th:text="${el.id}"/>
+            <!--<td class="dbTableData" th:text="${el.data}"/>-->
+
+            <td  class="dbTableData">
+                <form th:if="${el.id == editId}" th:action="'/database/edit/' + ${editId}" method="post">
+                    <input name="data" type="text" th:value="${el.data}" />
+                    <input type="submit" value="Apply" />
+                </form>
+                <div th:if="${el.id != editId}">
+                    <span th:text="${el.data}" />
+                </div>
+                <!--<span th:unless="${el.id == editId}">Edt</span>-->
+            </td>
+
+
+            <td class="dbTableEdit">
+                <a th:href="'/database/edit/' + ${el.id}">Edit</a>
+            </td>
+            <td class="dbTableDelete">
+                <a th:href="'/database/delete/' + ${el.id}">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="dbTableId"></td>
+            <td class="dbTableData">
+                <form action="/database/add" method="post">
+                    <input name="data" type="text" />
+                    <input type="submit" value="Add" />
+                </form>
+            </td>
+            <td class="dbTableEdit"></td>
+            <td class="dbTableDelete"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
